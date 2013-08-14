@@ -1,0 +1,19 @@
+<h1>Listing of Tweets</h1>
+
+<ul>
+  <% _.each(tweets, function(tweet){ %>
+    <li class="tweet">
+      <div class="time"><%= tweet.created_at %></div>
+      <div class="txt"><%= tweet.text %>
+        <% if (tweet.favorited) { %>
+          <div>Favourite</div>
+        <% }else{ %>
+          <a rel="<%= tweet.id %>" href="favourites/">Favourite</a>
+        <% } %>
+      </div> 
+    </li>
+  <% }); %>
+</ul>
+
+
+
